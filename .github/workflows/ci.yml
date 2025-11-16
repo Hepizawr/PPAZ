@@ -22,5 +22,8 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Run pylint
+        run: pylint --exit-zero .
+
       - name: Run pytest
-        run: pytest -q
+        run: pytest
