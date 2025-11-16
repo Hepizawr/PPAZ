@@ -47,7 +47,5 @@ jobs:
         run: Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 
       - name: Build and run Docker Compose
-        run: |
-          docker compose down || true
-          docker compose up -d --build
+        run: docker compose up -d --build
 
