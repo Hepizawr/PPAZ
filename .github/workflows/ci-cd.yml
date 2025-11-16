@@ -42,6 +42,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Allow PowerShell scripts in this job
+        shell: powershell
+        run: Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+
       - name: Build and run Docker Compose
         run: |
           docker compose down || true
